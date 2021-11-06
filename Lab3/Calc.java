@@ -18,6 +18,7 @@ public class Calc {
         } else {
             System.out.println(result);
         }
+        
     }
 
     public static double calculateResult(double num1, double num2, String[] digitsStr) {
