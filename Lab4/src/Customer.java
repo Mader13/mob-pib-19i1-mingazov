@@ -1,27 +1,28 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Customer {
-    int customerID;
-    boolean regularCustomer;
+public final class Customer {
+    private final int id;
+    private final boolean regular;
 
-    public Customer(int customerID, boolean regularCustomer) {
-        isRegularCustomer();
-        this.customerID = customerID;
-        this.regularCustomer = regularCustomer;
-        showCustomerInfo(customerID, regularCustomer);
+    public Customer(int id) {
+        this.id = id;
+        this.regular = isRegularCustomer();
     }
 
-    protected static boolean isRegularCustomer(){
-        Random rand = new Random();
-        boolean regularCustomer;
-        regularCustomer = rand.nextBoolean();
-        return regularCustomer;
+    private boolean isRegularCustomer() {
+        return new Random().nextBoolean();
     }
 
-
-    public static void showCustomerInfo(int customerID, boolean regularCustomer) {
-        System.out.println("Is " + customerID + " regular customer?" + " " + regularCustomer);
+    public int getID() {
+        return id;
     }
 
+    public boolean getRegular(boolean regular) {
+        return regular;
+    }
+
+    public String showCustomerInfo() {
+        return "Is " + id + " regular customer?" + " " + regular;
+    }
 }

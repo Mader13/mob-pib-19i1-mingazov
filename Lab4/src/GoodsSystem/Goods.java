@@ -1,22 +1,40 @@
 package GoodsSystem;
 
 public class Goods {
-    double price;
-    int productID;
-    String Name;
+    private double price;
+    private int id;
+    private final String name;
 
-    public Goods(int productID, double price, String Name){
-        this.productID = productID;
+    public Goods(int id, double price, String name){
+        this.id = id;
         this.price = price;
-        this.Name = Name;
+        this.name = name;
     }
 
     public String getGoodsName() {
-        return Name;
+        return name;
     }
 
     public double getPrice(){
         return price;
     }
+
+    public double getId(){
+        return id;
+    }
+
+
+    public void setPrice(){
+        this.price = price;
+    }
+
+    public void setId(){
+        this.id = id;
+    }
+    @Override
+    public String toString() {
+        return " Item " + id + ", " + "Price: " + price + ", " + name + "\n";
+    }
+
 
 }
