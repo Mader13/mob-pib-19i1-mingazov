@@ -1,9 +1,11 @@
 import GoodsSystem.*;
 
+import java.io.*;
 import java.time.DayOfWeek;
 import java.util.*;
 
-public class ShoppingCart {
+public class ShoppingCart implements Serializable {
+    private static final long serialVersionUID = 2L;
     ArrayList<String> purchases = new ArrayList<>();
     Catalog catalog = new Catalog();
     List<Goods> list = catalog.getGoodsList();
@@ -62,6 +64,7 @@ public class ShoppingCart {
         }
 
     }
+
 
 
 }
